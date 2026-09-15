@@ -1,0 +1,437 @@
+/*Alternatives Style-Sheet, nicht mehr vollständig*/
+/*Transparente/Glas-Look UI-Elemente*/
+
+/*alle Paddings und Margins zu Beginn zurücksetzen, die nerven nur*/
+* {
+    padding: 0;
+    margin: 0;
+    
+}
+
+/*Map die das gesamte Fenster ausfüllt*/
+#map {
+    width: 100vw;
+
+    right: 0;
+    position: fixed;
+    height: 100vh;
+}
+
+#container {
+    position: fixed;
+    width: 240px;
+    margin: 20px;
+    padding: 10px;
+    z-index: 1;
+    max-height: calc(100vh - 80px);
+    background: white;
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+    
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    
+}
+
+#sidebar {
+    width: 265px;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background: white;
+    display: none;
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+
+    /* From https://css.glass */
+    /*background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);*/
+}
+
+#startContainer {
+    display: inline-flex;
+    gap: 5px;
+}
+
+/*Stil des Start-Markers*/
+.startMarker {
+    background-image: url("images/start.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/*Stil des End-Markers*/
+.endMarker {
+    background-image: url("images/dest2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+/*Stil der Extra-Markers*/
+.extraMarker {
+    background-image: url("images/extra.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.posMarker {
+    background-image: url("images/loc3.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+/*Der Invisible-Marker ist unsichtbar*/
+.invisiMarker {
+    visibility: hidden;
+}
+
+.invisiMarker2 {
+    background-image: none;
+}
+
+/*Stil der Marker-Popups*/
+.mapboxgl-popup {
+    max-width: 200px;
+
+    
+}
+
+.mapboxgl-popup-content {
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+    
+}
+
+
+.mapboxgl-popup-anchor-top .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-top-right .mapboxgl-popup-tip {
+    border-bottom-color: black;
+    }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-left .mapboxgl-popup-tip,
+.mapboxgl-popup-anchor-bottom-right .mapboxgl-popup-tip {
+    border-top-color: black;
+    }
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip {
+    border-right-color: black;
+    }
+.mapboxgl-popup-anchor-right .mapboxgl-popup-tip {
+    border-left-color: black;
+    }
+
+/*Allgemeiner Stil der Suchleisten*/
+.mapboxgl-ctrl-geocoder {
+
+    background-color: rgb(249, 249, 249);
+    /*border: 2px solid #ccc;*/
+    border-radius: 0px;
+    content: "Start";
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-transform: capitalize;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+}
+
+/*Generelle Einstellungen für das Icon in der geocoderBox*/
+.mapboxgl-ctrl-geocoder--icon{
+    position: fixed;
+    padding: 0;
+}
+
+/*Entfernt die Outline der geocoderBox*/
+.mapboxgl-ctrl-geocoder--input:focus{
+outline: none;
+}
+
+/*Container für Start Geocoder*/
+#geocoderStart {
+    
+    
+}
+
+/*Stil der Start Geocoder Suchleiste*/
+#geocoderStart .mapboxgl-ctrl-geocoder {
+    z-index: 10; /*höherer z-Index, damit die Vorschlage über der End Geocoder suchleiste angezeigt werden und nicht darunter*/
+    
+    
+}
+
+
+
+/*Container für End Geocoder*/
+#geocoderEnd {
+    padding-bottom: 10px;
+}
+
+/*Stil der End Geocoder Suchleiste*/
+#geocoderEnd .mapboxgl-ctrl-geocoder {
+
+}
+
+#buttonContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px;
+    padding-bottom: 20px;
+}
+
+#buttonContainer button {
+    padding: 5px;
+    background-color: white;
+    border: none;
+    color: gray;
+    border-radius: 0px;
+    cursor: pointer;
+    box-shadow: 0px 0px 25px 5px rgba(0,0,0,0.25);
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+
+}
+
+/*#buttonContainer button:nth-child(1) {
+    margin-right: 5px;
+}
+
+#buttonContainer button:nth-child(2) {
+    margin-right: 2.5px;
+    margin-left: 2.5px;
+}
+
+#buttonContainer button:nth-child(3) {
+    margin-left: 5px;
+}*/
+
+#buttonContainer button:target {
+    background-color: blue;
+
+}
+
+
+#loader {
+    width: 50px;
+    filter:invert();
+}
+
+#sliderContainer{
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    padding: 10px;
+    /*border: 1px solid rgba(0,0,0,0.25);*/
+    border-radius: 0px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background: white;
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+    
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#sliderTextAndOverlay {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+}
+
+#overlay {
+    width: 60px;
+    border-radius: 0px;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+#myRange{
+    width: 250px;
+}
+
+
+
+#logosection {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    font-family: sans-serif;
+    font-size: 10px;
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+#logosection h1 {
+
+    font-weight: normal;
+}
+
+
+#loaderContainer {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+
+}
+
+#loader {
+    height: 25px;
+    width: 25px;
+}
+
+#bottomContainer {
+    position: fixed;
+    width: 250px;
+    z-index: 1;
+    font-family: 'Open Sans', sans-serif;
+    padding: 10px;
+    padding-bottom: 10px;
+    bottom: 0;
+
+}
+
+#startDateInput {
+    width: 160px;
+    height: 15px;
+    padding: 5px;
+    padding-top: 8px;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 0px 0px 0px 0px;
+    justify-content: left;
+    background: #eeeeee;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+}
+
+/*input[type="datetime-local"]::-webkit-datetime-edit {
+    display:none;
+    align-self: center;
+}*/
+
+
+#routeSummary {
+
+    display: none;
+    flex-direction: column;
+    
+    width: 240px;
+    background-color: rgba(0,0,0,1);
+    color: white;
+    border-radius: 0px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 14px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    /*box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.25);*/
+    background-blend-mode:multiply;
+    z-index: 2;
+    position: relative;
+
+    background: rgba(0, 0, 0, 1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0px 0px 50px 5px rgba(0,0,0,0.25);
+}
+
+
+#container2 {
+    background: transparent;
+    align-self: center;
+    width: 200px;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+
+}
+
+#table {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+#conditionSummary {
+}
+
+#conditionSummary:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+
+    #sidebar {
+        display: none !important;
+    }
+
+    #container {
+        background: transparent;
+        margin: 10px;
+        box-shadow: none;
+    }
+
+    #logosection {
+        display: none;
+    }
+
+    #map {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .mapboxgl-ctrl-geocoder {
+        width: 25px;
+    }
+    
+}
+
