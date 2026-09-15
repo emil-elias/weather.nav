@@ -1,4 +1,6 @@
-# WetterNavi
+# weather.nav - WetterNavi
+
+by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri
 
 ### Mapbox Docs:            
 https://docs.mapbox.com/
