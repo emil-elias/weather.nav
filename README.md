@@ -2,6 +2,18 @@
 
 by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri
 
+## Careful!
+
+This application is not intended to be publicly available! 
+Because of the current architecture, API-keys are exposed through JavaScript, therefore the application should only be run in a private network!
+
+If you want to run this application publicly, you need to make sure API-keys are stored and retrieved on the server side.
+
+You'll need 
+- an access token for Mapbox, 
+- an app ID for OpenWeatherMap,
+- optionally a subscription key for Microsoft Azure Maps
+
 ### Mapbox Docs:            
 https://docs.mapbox.com/
 
