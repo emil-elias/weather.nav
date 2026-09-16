@@ -1,10 +1,15 @@
-# weather.nav - WetterNavi
+# weather.nav - WetterNavi (prototype)
 
 by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri
 
-## Careful!
+## Demo
 
-This application is not intended to be publicly available! 
+- Short demo: https://www.youtube.com/watch?v=I3Qmj1J1HCs
+- Long demo: https://www.youtube.com/watch?v=rpxUeeBUlDU
+
+## Careful! Exposed API-keys!
+
+This application is still a prototype - it is not intended to be publicly available! 
 Because of the current architecture, API-keys are exposed through JavaScript, therefore the application should only be run in a private network!
 
 If you want to run this application publicly, you need to make sure API-keys are stored and retrieved on the server side.
@@ -13,6 +18,8 @@ You'll need
 - an access token for Mapbox, 
 - an app ID for OpenWeatherMap,
 - optionally a subscription key for Microsoft Azure Maps
+
+## Further helpful documentation
 
 ### Mapbox Docs:            
 https://docs.mapbox.com/
