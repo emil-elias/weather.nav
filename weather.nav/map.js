@@ -2,13 +2,6 @@
 
 /*----------*/
 
-// Mapbox Access Token
-mapboxgl.accessToken = '';
-
-azureSubscriptionKey = '';
-
-openWeatherMapAppId = '';
-
 // Map initialisieren
 const map = new mapboxgl.Map({
     container: 'map', //die ID vom HTML-Element, in diesem Fall div #map (in der index.html)
@@ -122,16 +115,16 @@ async function addWeatherLayer() {
             console.log(string);
 
         } else {
-            string = `https://atlas.microsoft.com/map/tile?api-version=2022-08-01&tilesetId=microsoft.weather.radar.main&zoom={z}&x={x}&y={y}&timeStamp=${ISOtimestamp}&subscription-key=${azureSubscriptionKey}`;
+            string = `https://atlas.microsoft.com/map/tile?api-version=2022-08-01&tilesetId=microsoft.weather.radar.main&zoom={z}&x={x}&y={y}&timeStamp=${ISOtimestamp}&subscription-key=${AZURE_SUBSCRIPTION_KEY}`;
 
         }
 
     } else if (overlay.value == "wind") {
-        string = `http://maps.openweathermap.org/maps/2.0/weather/WND/{z}/{x}/{y}?appid=${openWeatherMapAppId}`;
+        string = `http://maps.openweathermap.org/maps/2.0/weather/WND/{z}/{x}/{y}?appid=${OPEN_WEATHER_MAP_APP_ID}`;
     } else if (overlay.value == "snow") {
-        string = `http://maps.openweathermap.org/maps/2.0/weather/SD0/{z}/{x}/{y}?appid=${openWeatherMapAppId}`;
+        string = `http://maps.openweathermap.org/maps/2.0/weather/SD0/{z}/{x}/{y}?appid=${OPEN_WEATHER_MAP_APP_ID}`;
     } else if (overlay.value == "temp") {
-        string = `http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}?appid=${openWeatherMapAppId}`;
+        string = `http://maps.openweathermap.org/maps/2.0/weather/TA2/{z}/{x}/{y}?appid=${OPEN_WEATHER_MAP_APP_ID}`;
     }
 
     // Falls schon ein Layer bzw. eine Source existiert muss sie nochmal entfernt werden bevor sie wieder hinzugefügt werden kann
