@@ -1,5 +1,7 @@
 # weather.nav - WetterNavi (prototype)
 
+A navigation tool for Driving, Cycling or Walking, which forecasts weather along your route.
+
 by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri
 
 ## Demo
