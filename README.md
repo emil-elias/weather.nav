@@ -2,7 +2,9 @@
 
 A navigation tool for Driving, Cycling or Walking, which forecasts weather along your route.
 
-by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri
+by Emil Wilde, Dario Aberle, Leonard Kiefner, Nikolaos Dhimitri 
+
+as part of the lecture module "Interdisciplinary Module: Wetter in Bremen und umzu" at the University Bremen and University of the Arts Bremen
 
 ## Demo
 
